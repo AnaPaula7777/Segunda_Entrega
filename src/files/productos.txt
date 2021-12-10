@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "nombre": "Vela Azul",
+    "timestamp": 1639034219580,
+    "descripcion": "Vela de tres mecheros color azul",
+    "codigo": "123",
+    "thumbnail": "http://localhost:8080/images/1639034075615blue_candle.jpg",
+    "precio": "18.50",
+    "stock": "20"
+  },
+  {
+    "nombre": "Vela Blanca",
+    "timestamp": 1639095157451,
+    "descripcion": "Vela de un mechero color blanca",
+    "codigo": "656",
+    "thumbnail": "http://localhost:8080/images/1639095157446white_candle.jpg",
+    "precio": "23.50",
+    "stock": "45",
+    "id": 2
+  },
+  {
+    "nombre": "Vela Amarilla",
+    "timestamp": 1639095213722,
+    "descripcion": "Vela de tres mecheros color amarillo",
+    "codigo": "684",
+    "thumbnail": "http://localhost:8080/images/1639095213717yellow_candle.jpg",
+    "precio": "13.50",
+    "stock": "12",
+    "id": 3
+  },
+  {
+    "nombre": "Vela Rosa",
+    "timestamp": 1639099635541,
+    "descripcion": "Vela de tres mecheros color rosa",
+    "codigo": "544",
+    "thumbnail": "http://localhost:8080/images/1639099635505pink_candle.jpg",
+    "precio": "18.50",
+    "stock": "23",
+    "id": 4
+  },
+  {
+    "nombre": "Vela Roja",
+    "timestamp": 1639099757904,
+    "descripcion": "Vela de un mechero color rojo",
+    "codigo": "123",
+    "thumbnail": "http://localhost:8080/images/1639099757873red_candle.jpg",
+    "precio": "11.25",
+    "stock": "49",
+    "id": 5
+  }
+]
