@@ -1,7 +1,6 @@
 import express from 'express';
-import Contenedor from '../classes/Contenedor.js';
 const router = express.Router();
-const contenedor  = new Contenedor();
+import {carritos} from '../daos/index.js'
 
 
 router.use((req,res,next)=>{
@@ -10,18 +9,25 @@ router.use((req,res,next)=>{
     console.log('Petición hecha a las: '+time.toTimeString().split(" ")[0])
     next()
 })
+
+
 //GETS
 router.get('/:id/productos',(req,res)=>{
-    let id= parseInt(req.params.id);
-    contenedor.getCartById(id).then(result=>{
+    let id = req.params.id;
+    let isNumber = typeof id === "number" ? true:false;
+    if(isNumber) {
+        id = parseInt(id)
+    }
+    carritos.getCartById(id).then(result=>{
         res.send(result.payload);
     })
 })
+
 //POSTS
 // Crea un carrito y devuelve su id.
 router.post('/',(req,res)=>{
     let carrito = req.body;
-    contenedor.saveCart(carrito).then(result=>{
+    carritos.saveCart(carrito).then(result=>{
         res.send(result);
     })
 })
@@ -31,7 +37,7 @@ router.post('/:id/productos',(req,res)=>{
     let id = req.params.id;
     let productos = req.body;
     let pid = productos.id;
-    contenedor.addProductToCart(id,pid).then(result=>{
+    carritos.addProductToCart(id,pid).then(result=>{
         res.send(result);
     })
 })
@@ -40,17 +46,31 @@ router.post('/:id/productos',(req,res)=>{
 
 //Vacia un carrito y lo elimina
 router.delete('/:id',(req,res)=>{
-    let id= parseInt(req.params.id);
-    contenedor.deleteCartById(id).then(result=>{
+    let id = req.params.id;
+    let isNumber = typeof id === "number" ? true:false;
+    if(isNumber) {
+        id = parseInt(id)
+    }
+    carritos.deleteById(id).then(result=>{
         res.send(result);
     })
 })
 
 //Elimina un producto del carrito dada la id del carrito y del producto
 router.delete('/:id/productos/:id_prod',(req,res)=>{
-    let id= parseInt(req.params.id);
-    let id_prod= parseInt(req.params.id_prod);
-    contenedor.deleteProductFromCart(id,id_prod).then(result=>{
+    let id=req.params.id;
+    let id_prod=req.params.id_prod;
+
+    let idIsNumber = typeof id === "number" ? true:false;
+    if(idIsNumber){
+        id=parseInt(id);
+    }
+    let idProdIsNumber = typeof id === "number" ? true:false;
+    if(idProdIsNumber){
+        id_prod=parseInt(id_prod)
+    }
+
+    carritos.deleteProductFromCart(id,id_prod).then(result=>{
         res.send(result);
     })
 })

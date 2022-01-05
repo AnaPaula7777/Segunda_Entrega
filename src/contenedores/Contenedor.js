@@ -60,7 +60,7 @@ class Contenedor{
             if(!dataObj.some(pt=>pt.id===id)) return {status:"error", message:"No hay productos con el id especificado"}
             let result = dataObj.map(product=>{
                 if(product.id===id){
-                    body = Object.assign({id:product.id,...body});
+                    body = Object.assign({...product,...body});
                     return body;
                 }else{
                     return product;
@@ -143,7 +143,7 @@ class Contenedor{
 
             let objNew = {
                 timestamp: Date.now(),
-                productos: obj.productos,
+                productos: obj.productos ? obj.productos : [],
                 id: dataObj.length + 1
             };
             dataObj.push(objNew);
@@ -221,7 +221,13 @@ class Contenedor{
             let carrito = carritos.find(v=>v.id==cid);
             if(!producto) return {status:"error", message:"No se encontró el producto"};
             if(!carrito) return {status:"error",message:"Carrito no encontrado"};
-            carrito.productos.push(producto);
+            let isInCarr = carrito.productos.find(p=>p.id===producto.id);
+            if(!isInCarr){
+                carrito.productos.push(producto);
+            } else{
+                return {status:"error",message:"El producto ya existe en el carrito y no puede agregarse nuevamente"};
+            }
+        
             let carritoAux = carritos.map(carr=>{
                 if(carr.id===carrito.id){
                     return carrito;

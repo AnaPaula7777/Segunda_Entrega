@@ -6,7 +6,7 @@
     "descripcion": "Vela de tres mecheros color azul",
     "codigo": "123",
     "thumbnail": "http://localhost:8080/images/1639034075615blue_candle.jpg",
-    "precio": "18.50",
+    "precio": 25.9,
     "stock": "20"
   },
   {
@@ -35,7 +35,7 @@
     "descripcion": "Vela de tres mecheros color rosa",
     "codigo": "544",
     "thumbnail": "http://localhost:8080/images/1639099635505pink_candle.jpg",
-    "precio": "18.50",
+    "precio": "21.50",
     "stock": "23",
     "id": 4
   },
@@ -48,5 +48,15 @@
     "precio": "11.25",
     "stock": "49",
     "id": 5
+  },
+  {
+    "nombre": "Vela Gris",
+    "timestamp": 1641315901526,
+    "descripcion": "Vela de un mechero color gris",
+    "codigo": "852",
+    "thumbnail": "http://localhost:8080/images/1641315901509grey_candle.jpg",
+    "precio": "25.80",
+    "stock": "45",
+    "id": 6
   }
 ]

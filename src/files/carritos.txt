@@ -37,13 +37,44 @@
         "precio": "13.50",
         "stock": "12",
         "id": 3
+      },
+      {
+        "nombre": "Vela Blanca",
+        "timestamp": 1639095157451,
+        "descripcion": "Vela de un mechero color blanca",
+        "codigo": "656",
+        "thumbnail": "http://localhost:8080/images/1639095157446white_candle.jpg",
+        "precio": "23.50",
+        "stock": "45",
+        "id": 2
       }
     ],
     "id": 2
   },
   {
-    "timestamp": 1639104788958,
-    "productos": [],
+    "timestamp": 1641316521553,
+    "productos": [
+      {
+        "nombre": "Vela Rosa",
+        "timestamp": 1639099635541,
+        "descripcion": "Vela de tres mecheros color rosa",
+        "codigo": "544",
+        "thumbnail": "http://localhost:8080/images/1639099635505pink_candle.jpg",
+        "precio": "21.50",
+        "stock": "23",
+        "id": 4
+      }
+    ],
     "id": 3
+  },
+  {
+    "timestamp": 1641316527294,
+    "productos": [],
+    "id": 4
+  },
+  {
+    "timestamp": 1641354943335,
+    "productos": [],
+    "id": 5
   }
 ]
